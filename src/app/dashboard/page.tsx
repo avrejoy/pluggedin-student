@@ -273,7 +273,7 @@ export default function DashboardPage() {
                 {activeTab === "posts" && (
                     <div>
                         {posts.length === 0 ? (
-                            <div className="text-center py-20 bg-cream-50 rounded-2xl border-2 border-brown-200">
+                            <div className="text-center px-5 py-16 sm:py-20 bg-cream-50 rounded-2xl border-[1.3px] border-brown-200/40">
                                 <h3 className="text-xl font-semibold text-navy-600 mb-4">
                                     No posts yet
                                 </h3>

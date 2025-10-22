@@ -39,10 +39,10 @@ export default function LoginPage() {
         <div className="py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
             <div className="max-w-md w-full">
                 <div className="text-center mb-8">
-                    <h1 className="text-4xl font-gtwpro font-semibold text-navy-600 mb-2">
+                    <h1 className="text-3xl md:text-4xl font-gtwpro tracking-tight font-semibold text-navy-600 mb-2">
                         Welcome Back
                     </h1>
-                    <p className="text-navy-500 font-gtwpro font-normal">
+                    <p className="text-navy-500 font-gtwpro font-normal tracking-tight">
                         Sign in to manage your business
                     </p>
                 </div>
@@ -55,7 +55,7 @@ export default function LoginPage() {
 
                 <form
                     onSubmit={handleLogin}
-                    className="rounded-[25px] p-2 sm:p-5 md:p-8 border-[1.3px] border-navy-500/10"
+                    className="rounded-[25px] p-1 sm:p-5 md:p-8 sm:border-[1.3px] border-navy-500/10"
                 >
                     <div className="mb-6">
                         <CustomInput

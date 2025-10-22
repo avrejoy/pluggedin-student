@@ -10,8 +10,8 @@ export default function Header() {
     const { user, signOut } = useAuth();
 
     return (
-        <header className="bg-background py-6 border-b-[0.5px] border-brown-500/20">
-            <nav className="px-4 sm:px-6 lg:px-8">
+        <header className="bg-background border-b-[0.5px] border-brown-500/20">
+            <nav className="px-4 sm:px-6 lg:px-8 py-6">
                 <div className="flex justify-between items-center relative">
                     <Link
                         href="/"
@@ -80,8 +80,8 @@ export default function Header() {
                     </button>
                 </div>
             </nav>
-            <nav>
-                {mobileMenuOpen && (
+            {mobileMenuOpen && (
+                <nav>
                     <div className="md:hidden border-t border-brown-200 bg-cream-50 px-4 sm:px-6 lg:px-8">
                         <div className="flex flex-col py-4 space-y-3">
                             <Link
@@ -113,7 +113,7 @@ export default function Header() {
                                             signOut();
                                             setMobileMenuOpen(false);
                                         }}
-                                        className="px-4 py-2 border border-navy-700 text-navy-700 rounded-md hover:bg-navy-700 hover:text-white transition-all text-left"
+                                        className="px-4 py-2 border border-navy-600 text-navy-700 rounded-[13px] hover:bg-navy-600 hover:text-white transition-all text-left"
                                     >
                                         Sign Out
                                     </button>
@@ -129,7 +129,7 @@ export default function Header() {
                                     </Link>
                                     <Link
                                         href="/signup"
-                                        className="px-4 py-2 border border-navy-700 text-navy-700 rounded-md hover:bg-navy-700 hover:text-white transition-all text-left"
+                                        className="px-4 py-2 border border-navy-600 text-navy-600 rounded-[13px] hover:bg-navy-600 hover:text-white transition-all text-left"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Sign Up
@@ -138,8 +138,8 @@ export default function Header() {
                             )}
                         </div>
                     </div>
-                )}
-            </nav>
+                </nav>
+            )}
         </header>
     );
 }

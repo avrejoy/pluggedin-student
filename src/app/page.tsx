@@ -4,14 +4,14 @@ export default function Home() {
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-5xl md:text-6xl font-semibold tracking-tight font-gtwpro mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight font-gtwpro mb-4 sm:mb-6">
                         Your direct plug to
                         <br />
                         campus businesses
                     </h1>
-                    <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-gtwpro py-2">
+                    <p className="text-sm sm:text-lg md:text-xl mb-12 max-w-2xl mx-auto font-gtwpro py-2">
                         Join students discovering and supporting businesses run
                         by their classmates. One platform to find tutors, food,
                         barbers, clothing, and more on campus
@@ -21,13 +21,13 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/browse"
-                            className="px-8 py-3.5 border-[1.5px] rounded-[15px] transition-all text-[15px] font-medium font-gtwpro  border-navy-600 text-navy-600"
+                            className="px-8 py-3.5 border-[1.3px] rounded-[15px] transition-all text-[15px] font-medium font-gtwpro  border-navy-600 text-navy-600"
                         >
                             Browse Businesses
                         </Link>
                         <Link
                             href="/list-business"
-                            className="px-8 py-3.5 border-[1.5px] border-navy-600 bg-navy-600 text-cream-50 rounded-[15px] transition-all text-[15px] font-medium font-gtwpro"
+                            className="px-8 py-3.5 border-[1.3px] border-navy-600 bg-navy-600 text-cream-50 rounded-[15px] transition-all text-[15px] font-medium font-gtwpro"
                         >
                             List Your Business
                         </Link>
@@ -36,13 +36,13 @@ export default function Home() {
             </section>
 
             {/* Services Categories Section */}
-            <section className="py-20 px-6">
+            <section className="py-20 px-4 md:px-6">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl font-gtwpro font-semibold mb-12 text-center">
+                    <h2 className="text-3xl md:text-4xl font-gtwpro font-semibold mb-12 text-center tracking-tight">
                         Explore Categories
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 pt-0 md:pt-4">
                         {[
                             {
                                 emoji: "🛍️",
@@ -80,12 +80,12 @@ export default function Home() {
                                 href={`/browse?category=${item.title.toLowerCase()}`}
                             >
                                 <div
-                                    className={`border-[0.4px] border-navy-500/15 rounded-[30px] py-8 px-4 h-auto flex flex-col gap-5 hover:shadow-md transition-all duration-500 transform hover:-translate-y-1`}
+                                    className={`border-[0.4px] border-navy-500/15 rounded-[22px] md:rounded-[30px] py-6 md:py-8 px-3 md:px-4 h-auto flex flex-col gap-5 hover:shadow-md transition-all duration-500 transform hover:-translate-y-1`}
                                 >
-                                    <div className="text-5xl text-center">
+                                    <div className="text-3xl md:text-5xl text-center">
                                         {item.emoji}
                                     </div>
-                                    <h3 className="text-xl font-semibold text-navy-600 text-center font-gtwpro">
+                                    <h3 className="text-sm md:text-xl font-medium md:font-semibold text-navy-600 text-center font-gtwpro">
                                         {item.title}
                                     </h3>
                                 </div>
@@ -96,13 +96,13 @@ export default function Home() {
             </section>
 
             {/* Discover Your Campus Community Section */}
-            <section className="py-24 px-6">
+            <section className="py-6 sm:py-16 md:py-24 px-6">
                 <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-4xl font-gtwpro font-semibold mb-12 text-center">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-gtwpro font-semibold mb-12 text-center tracking-tight">
                         Discover Your Campus Community
                     </h2>
 
-                    <div className="grid sm:grid-cols-3 gap-10">
+                    <div className="grid sm:grid-cols-3 gap-6 md:gap-10">
                         {[
                             {
                                 icon: "📍",
@@ -138,7 +138,7 @@ export default function Home() {
             </section>
 
             {/* Footer */}
-            <footer className="py-16 px-6">
+            <footer className="mt-5 py-10 md:py-16 px-4 md:px-6">
                 <div className="max-w-8xl mx-auto grid sm:grid-cols-3 gap-12">
                     <div>
                         <h3 className="text-xl mb-3 font-gtwpro font-extrabold">

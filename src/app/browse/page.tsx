@@ -87,8 +87,8 @@ export default function BrowsePage() {
     return (
         <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-8">
-                    <h1 className="text-3xl md:text-4xl font-gtwpro font-semibold text-navy-500 mb-4">
+                <div className="text-center mb-5 sm:mb-8">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-gtwpro font-semibold text-navy-500 mb-4">
                         PLUGGED<span className="text-brown-500">IN</span>
                     </h1>
                 </div>
