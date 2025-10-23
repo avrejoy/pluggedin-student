@@ -10,8 +10,9 @@ const CustomInput = ({
     type,
     placeholder,
     disabled,
-    notRequired,
+    required,
     onBlurAction,
+    name,
 }: {
     value: string | number;
     setValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -21,8 +22,9 @@ const CustomInput = ({
     labelClass?: string;
     placeholder?: string;
     disabled?: boolean;
-    notRequired?: boolean;
+    required?: boolean;
     onBlurAction?: () => void;
+    name?: string;
 }) => {
     return (
         <React.Fragment>
@@ -38,6 +40,7 @@ const CustomInput = ({
                 </label>
             )}
             <input
+                name={name}
                 className={cn(
                     "w-full px-4 py-4 text-sm rounded-[15px] font-gtwpro font-normal placeholder:text-navy-600/70 border-[1.3px] border-navy-600/10 text-navy-600 focus:border-navy-600 focus:outline-none transition-colors duration-500 ease-in-out",
                     inputClass
@@ -48,7 +51,7 @@ const CustomInput = ({
                 id={label ? label.replace(" ", "-").toLowerCase() : ""}
                 type={type ? type : "text"}
                 disabled={disabled}
-                required={notRequired ? false : true}
+                required={required}
                 onBlur={onBlurAction ? onBlurAction : () => {}}
             />
         </React.Fragment>

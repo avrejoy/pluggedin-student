@@ -279,6 +279,7 @@ export default function ListBusinessPage() {
                     ].map((field) => (
                         <div key={field.name}>
                             <CustomInput
+                                name={field.name}
                                 label={field.label}
                                 value={
                                     formData[
