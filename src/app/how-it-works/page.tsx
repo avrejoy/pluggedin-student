@@ -208,7 +208,7 @@ export default function HowItWorksPage() {
 
             <div className="bg-cream-50 p-6 rounded-xl border-2 border-brown-200">
               <h4 className="font-semibold text-navy-600 mb-2">What if I have a problem or question?</h4>
-              <p className="text-navy-500">Reach out to us anytime at support@pluggedin.com. We're here to help!</p>
+              <p className="text-navy-500">Reach out to us anytime at support@uicpluggedin.com. We're here to help!</p>
             </div>
           </div>
         </div>
