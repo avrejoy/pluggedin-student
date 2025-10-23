@@ -67,14 +67,27 @@ export default function LoginPage() {
                         />
                     </div>
 
+                    {/* Updated password input with Forgot Password link */}
                     <div className="mb-6">
-                        <CustomInput
+                        <label className="block text-navy-600 font-semibold mb-2">
+                            Password
+                        </label>
+                        <input
                             type="password"
+                            required
                             value={password}
-                            setValue={(e) => setPassword(e.target.value)}
-                            label="Password"
-                            placeholder="•••••••••••"
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg border-2 border-brown-200 bg-cream-100 text-navy-600 focus:border-navy-600 focus:outline-none transition-colors"
+                            placeholder="••••••••"
                         />
+                        <div className="text-right mt-2">
+                            <Link
+                                href="/forgot-password"
+                                className="text-sm text-brown-500 hover:text-brown-400"
+                            >
+                                Forgot password?
+                            </Link>
+                        </div>
                     </div>
 
                     <button
