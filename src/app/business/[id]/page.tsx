@@ -174,6 +174,12 @@ export default function BusinessProfilePage() {
     function getCategoryName(categoryId: number) {
         return categories.find((c) => c.id === categoryId)?.name || "Other";
     }
+    function formatPhoneNumber(phone: string | null) {
+  if (!phone) return "";
+  const cleaned = ("" + phone).replace(/\D/g, "");
+  const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+  return match ? `(${match[1]}) ${match[2]}-${match[3]}` : phone;
+}
 
     if (loading) {
         return (
@@ -227,6 +233,7 @@ export default function BusinessProfilePage() {
                 </Link>
 
                 <div className="grid md:grid-cols-3 gap-8">
+                    {/* --- LEFT SIDEBAR --- */}
                     <div className="md:col-span-1">
                         <div className="bg-cream-50 rounded-2xl border-2 border-brown-200 overflow-hidden sticky top-8">
                             <div className="aspect-square bg-brown-200 flex items-center justify-center">
@@ -277,11 +284,80 @@ export default function BusinessProfilePage() {
                         </div>
                     </div>
 
+                    {/* --- MAIN CONTENT --- */}
                     <div className="md:col-span-2">
-                        {/* --- existing business info, owner controls, portfolio --- */}
-                        {/* Portfolio Section (same as before) */}
+                        {/* BUSINESS INFO SECTION */}
+                        <div className="bg-cream-50 rounded-2xl p-6 border-2 border-brown-200 mb-6">
+                            <h1 className="text-2xl font-bold text-navy-700 mb-2">
+                                {business.business_name}
+                            </h1>
+                            {business.tagline && (
+                                <p className="text-brown-500 italic mb-4">
+                                    {business.tagline}
+                                </p>
+                            )}
+                            <p className="text-navy-600 mb-4 whitespace-pre-line">
+                                {business.description ||
+                                    "No description provided."}
+                            </p>
 
-                        {/* Reviews Section */}
+                            <div className="space-y-2 text-navy-600">
+                                {business.contact_email && (
+                                    <p>
+                                        <strong>Email:</strong>{" "}
+                                        <a
+                                            href={`mailto:${business.contact_email}`}
+                                            className="text-brown-600 hover:underline"
+                                        >
+                                            {business.contact_email}
+                                        </a>
+                                    </p>
+                                )}
+
+                                {business.contact_phone && (
+                                    <p>
+                                        <strong>Phone:</strong>{" "}
+                                        {formatPhoneNumber(business.contact_phone)}
+                                    </p>
+                                )}
+
+                                {business.website_url && (
+                                    <p>
+                                        <strong>Website:</strong>{" "}
+                                        <a
+                                            href={business.website_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-brown-600 hover:underline"
+                                        >
+                                            {business.website_url}
+                                        </a>
+                                    </p>
+                                )}
+
+                                {business.instagram_handle && (
+                                    <p>
+                                        <strong>Instagram:</strong>{" "}
+                                        <a
+                                            href={`https://instagram.com/${business.instagram_handle.replace(
+                                                "@",
+                                                ""
+                                            )}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-brown-600 hover:underline"
+                                        >
+                                            @{business.instagram_handle.replace(
+                                                "@",
+                                                ""
+                                            )}
+                                        </a>
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* REVIEWS SECTION */}
                         <div className="bg-cream-50 rounded-2xl p-6 border-2 border-brown-200 mt-6">
                             <div className="flex justify-between items-center mb-6">
                                 <h2 className="text-xl font-semibold text-navy-600">
@@ -402,7 +478,9 @@ export default function BusinessProfilePage() {
                                             <div className="flex justify-between items-start mb-2">
                                                 <div>
                                                     <p className="font-semibold text-navy-600">
-                                                        {review.reviewer_name}
+                                                        {
+                                                            review.reviewer_name
+                                                        }
                                                     </p>
                                                     <div className="flex mt-1">
                                                         {[1, 2, 3, 4, 5].map(
